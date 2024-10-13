@@ -1,99 +1,115 @@
-*{
+* {
     padding: 0;
-    margin:0;
-    font-family: 'Lucia Sans', 'Lucia Sans Regular', 'Lucida Grande', 'margin';
+    margin: 0;
+    box-sizing: border-box; /* Para que padding y margin se incluyan en el ancho total */
+    font-family: 'Lucia Sans', 'Lucia Sans Regular', 'Lucida Grande', 'sans-serif'; /* Corregido a 'sans-serif' */
     color: rgb(18, 20, 20);
-    text-decoration: none;
-    text-align: center;
 }
 
-.titulo{
+body {
+    text-align: center; /* Aplicado a body en lugar de universal */
+}
+
+.titulo {
     padding: 40px;
 }
-nav ul{
+
+nav ul {
     width: 100%;
     margin: auto;
     border-radius: 10px;
-    list-style-type: georgian;
+    list-style-type: none; /* Cambiado de 'georgian' a 'none' */
     background-color: rgb(173, 236, 72);
+    padding: 0; /* Añadido padding para eliminar espacio extra */
 }
 
-nav li{
+nav li {
     display: inline-flex;
 }
 
-nav a{
+nav a {
     padding: 10px;
     width: 150px;
+    text-decoration: none; /* Añadido para asegurar que los enlaces no tengan subrayado */
 }
 
-nav ul a:hover{
+nav ul a:hover {
     background-color: rgb(239, 239, 245);
 }
 
-.contenido{
+.contenido {
     display: flex;
-    width: 80%;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten */
+    width: 90%; /* Aumentado para un mejor ajuste en pantallas pequeñas */
     margin: auto;
     margin-top: 50px;
 }
 
-.contenido .articulo{
-    width: 70%;
-    margin: auto;
+.contenido .articulo {
+    flex: 1 1 300px; /* Flex para permitir que los artículos se ajusten en filas */
+    margin: 15px; /* Margen para separar artículos */
 }
 
-
-.contenido .articulo div{
-    width: 80%;
+.contenido .articulo div {
     padding: 15px;
     background-color: rgb(116, 177, 192);
     border-radius: 15px;
-    border-bottom: 20px;
 }
 
-.contenido .articulo img{
-    width: 60%;
+.contenido .articulo img {
+    width: 100%; /* Cambiado a 100% para que la imagen sea responsiva */
     border-radius: 5%;
     margin-top: 3%;
 }
 
-
-.contenido .secundario{
-    width: 30%;
+.contenido .secundario {
+    flex: 1 1 100%; /* Para que el contenido secundario ocupe todo el ancho en pantallas pequeñas */
     padding: 10px; 
-    border-radius: 15px;
+    margin-top: 20px; /* Añadido margen superior */
 }
 
-.contenido .secundario p{
+.contenido .secundario p {
     background-color: rgb(235, 219, 4);
     border-radius: 15px;
     padding: 20px;
-    height: auto;
 }
 
-.piedepagina{
+.piedepagina {
     background-color: aliceblue;
-    margin: 100px;
+    padding: 40px; /* Cambiado a padding para mejor visualización */
+    margin: 20px; /* Margen reducido */
 }
 
-.piedepagina p{
-    padding: 100px;
-}
-
-h1{
-    font-size: 70px;
+h1 {
+    font-size: 3rem; /* Usar rem para mejor adaptabilidad */
     color: darkcyan;
     border-radius: 10px;
 }
 
-h2{
-    font-size: 40px;
+h2 {
+    font-size: 2.5rem; /* Usar rem para mejor adaptabilidad */
     color: darkblue;
     border-radius: 10px;
 }
-p{
-    font-size: 20px;
+
+p {
+    font-size: 1.2rem; /* Usar rem para mejor adaptabilidad */
     color: darkred;
     text-align: justify;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav li {
+        display: block; /* Cambiar a bloque en pantallas pequeñas */
+        margin: 10px 0;
+    }
+
+    .contenido {
+        flex-direction: column; /* Cambiar a columna para dispositivos pequeños */
+    }
+
+    .contenido .secundario {
+        width: 100%; /* Asegurar que la sección secundaria ocupe todo el ancho */
+    }
 }
